@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django app</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <h1>Hello this is index.html</h1>
+
+    <p>This is logo</p>
+    <img src="{% static 'images/logo.png' %}" alt="logo python" width="100"/>
+
+    <h2>This is access record</h2>
+
+    <div class="djangotwo">
+      
+      {% if access_records %}
+        <table>
+          <thead>
+            <th>Site Name</th>
+            <th>Date Accessted</th>
+          </thead>
+          
+          {% for data in access_records %}
+            <tr>
+              <td>{{data.name}}</td>
+              <td>{{data.date}}</td>
+            </tr>
+          {% endfor %}
+            
+        </table>
+      {% else %}
+        <p>NO ACCESS RECORD</p>
+      {% endif %}
+        
+    </div>
+  </body>
+</html>

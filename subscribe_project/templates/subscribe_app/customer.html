@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer</title>
+</head>
+<body>
+    <h1>This is Customer list</h1>
+    
+    {% if customers %}
+        <ol>
+            {% for person in customers %}
+            <li>
+                Customer Info
+                <ul>
+                    <li>First name : {{person.first_name}}</li>
+                    <li>last name : {{person.last_name}}</li>
+                    <li>Email name : {{person.email}}</li>
+                </ul>
+            </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+        
+</body>
+</html>
